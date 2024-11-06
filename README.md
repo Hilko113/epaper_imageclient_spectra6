@@ -24,7 +24,10 @@ If it runs into any errors the program will go to deep sleep for 2 hours and the
 Before flashing the program to the ESP32 you should edit the following lines in the .ino file
 
 const char* ssid = "YOURSSID";
+
 const char* password = "YOURWIFIPASSWORD";
+
 const char* image_url = "http://YOURURL.COM/output.h"; // URL to image.
+
 const char* wakeHoursUrl = "http://YOURURL.COM/timer.txt"; // URL to wakehours txt file.
 
