@@ -31,3 +31,4 @@ const char* image_url = "http://YOURURL.COM/output.h"; // URL to image.
 
 const char* wakeHoursUrl = "http://YOURURL.COM/timer.txt"; // URL to wakehours txt file.
 
+Below there are the timezone setting. You should set those to the right timezone.
