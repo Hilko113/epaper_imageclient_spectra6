@@ -3,16 +3,44 @@ import numpy as np
 import sys
 
 def main():
-    # Check if there are exactly 3 arguments (script name, input file, and output file)
-    if len(sys.argv) != 3:
-        print("Usage: python 6color73i.py input_image.jpg output_file.c")
+    # Check if there are exactly 4 arguments (script name, orientation, input file, and output file)
+    if len(sys.argv) != 4:
+        print("Usage: python 6color73i.py orientation input_image.jpg output_file.h")
         return
 
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
+    orientation = sys.argv[1].lower()
+    input_file = sys.argv[2]
+    output_file = sys.argv[3]
 
     # Open and convert the image to RGB
     image = Image.open(input_file).convert('RGB')
+
+    # Rotate the image if orientation is vertical
+    if orientation == "vertical":
+        image = image.rotate(90, expand=True)
+    
+    # Calculate the aspect ratio of the target size and the original image
+    target_ratio = 800 / 480
+    image_ratio = image.width / image.height
+
+    # Determine scaling and cropping
+    if image_ratio > target_ratio:
+        # Image is wider than target, crop the width
+        new_height = 480
+        new_width = int(480 * image_ratio)
+    else:
+        # Image is taller than target, crop the height
+        new_width = 800
+        new_height = int(800 / image_ratio)
+
+    # Resize and center-crop to the target size
+    image = image.resize((new_width, new_height), Image.LANCZOS)
+    left = (new_width - 800) / 2
+    top = (new_height - 480) / 2
+    right = (new_width + 800) / 2
+    bottom = (new_height + 480) / 2
+    image = image.crop((left, top, right, bottom))
+
     pixels = np.array(image, dtype=np.float32)
     height, width, channels = pixels.shape
 
