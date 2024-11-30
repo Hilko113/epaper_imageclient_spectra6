@@ -1,3 +1,7 @@
+# epaper_imageclient_spectra6
+A simple ESP32 program that downloads a c-array image from a http url and display it on a 7.3 inch Spectra 6 epaper display.
+
+------------------------------------------------------------------------------------------<br/>
 ESP32 pinout:<br/>
 <br/>
 VCC = 3.3v<br/>
@@ -8,14 +12,10 @@ CS = GPIO-27<br/>
 DC = GPIO-14<br/>
 RST = GPIO-12<br/>
 BUSY = GPIO-13<br/>
-
-
-# epaper_imageclient_spectra6
-A simple ESP32 program that downloads a c-array image from a http url and display it on a 7.3 inch Spectra 6 epaper display.
-
+------------------------------------------------------------------------------------------<br/>
 -An ESP32 with extenden PSRAM is required. I used an ESP32-WROVER myself.<br/>
--You should solder off the power led from the ESP32 to save a lot of battery life.
-
+-You should solder off the power led from the ESP32 to save a lot of battery life.<br/>
+------------------------------------------------------------------------------------------<br/>
 This program does the following:<br/>
 When booting up it connects to wifi.<br/>
 Then downloads a .txt file and a .h file from a specified url.<br/>
