@@ -1,3 +1,15 @@
+ESP32 pinout:<br/>
+<br/>
+VCC = 3.3v<br/>
+GND = GND<br/>
+DIN/SDI = GPIO-23<br/>
+SCLK/SCK = GPIO-18<br/>
+CS = GPIO-27<br/>
+DC = GPIO-14<br/>
+RST = GPIO-12<br/>
+BUSY = GPIO-13<br/>
+
+
 # epaper_imageclient_spectra6
 A simple ESP32 program that downloads a c-array image from a http url and display it on a 7.3 inch Spectra 6 epaper display.
 
