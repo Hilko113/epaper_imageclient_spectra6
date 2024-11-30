@@ -13,7 +13,7 @@ DC = GPIO-14<br/>
 RST = GPIO-12<br/>
 BUSY = GPIO-13<br/>
 ------------------------------------------------------------------------------------------<br/>
--An ESP32 with extenden PSRAM is required. I used an ESP32-WROVER myself.<br/>
+-A ESP32 with extended PSRAM is required. I used an ESP32-WROVER myself.<br/>
 -You should solder off the power led from the ESP32 to save a lot of battery life.<br/>
 ------------------------------------------------------------------------------------------<br/>
 This program does the following:<br/>
